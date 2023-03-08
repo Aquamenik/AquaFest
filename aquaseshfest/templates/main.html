@@ -12,7 +12,25 @@
 </head>
 
 <body>
-    {% include 'navbar.html' %}
+    <header>
+        <p>AQUASESH</p>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="{% url 'home' %}" >BILETY</a></li>
+                <li><a href="{% url 'home' %}" >LINE-UP</a></li>
+                <li><a href="{% url 'home' %}" >SCENY</a></li>
+            </ul>
+        </nav>
+        <a class="lgn" href="{% url 'login' %}"><button>ZALOGUJ</button></a>
+    </header>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 
     {% block content %}
 
