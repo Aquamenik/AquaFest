@@ -27,7 +27,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-item: left;
-    padding: 30px 10%;
+    padding: 30px 5%;
 }
 
 .nav__links {

@@ -2,20 +2,32 @@
 
 {% block content %}
 
-<div>
+<div class="loginP">
     <form method="POST" action="">
         {% csrf_token %}
 
-        <label>Nazwa użytkownika:</label>
-        <input type="text" name="username" placeholder="...">
+        <label>Email:</label>
+        <input type="text" name="email" placeholder="...">
 
         <label>Hasło:</label>
         <input type="password" name="password" placeholder="...">
 
         <input type="submit" value="Zaloguj">
     </form>
-
+    <p>Nie jesteś zarejestrowany?</p>
+    <a href="{% url 'register' %}">Zarejestruj się</a>
 </div>
-
+<!--
+{% else %}
+<div class="RegisterP">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Zarejestruj się">
+    </form>
+    <p>Jesteś zarejestrowany?</p>
+    <a href="{% url 'login' %}">Zaloguj się</a>
+</div>
+{% endif %} -->
 
 {% endblock content %}

@@ -21,7 +21,11 @@
                 <li><a href="{% url 'home' %}" >SCENY</a></li>
             </ul>
         </nav>
+        {% if request.user.is_authenticated %}
+        <a class="lgo" href="{% url 'logout' %}"><button>WYLOGUJ</button></a>
+        {% else %}
         <a class="lgn" href="{% url 'login' %}"><button>ZALOGUJ</button></a>
+        {% endif %}
     </header>
 
     {% if messages %}
